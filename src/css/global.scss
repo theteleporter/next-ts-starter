@@ -1,0 +1,74 @@
+/* stylelint-disable scss/operator-no-newline-after */
+@use 'sass:map';
+@use 'sass:math';
+@import './helpers';
+@import './reset.css';
+
+:root {
+  // Typography
+  --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
+    ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
+
+  // Colors
+  --inspect-color: #f00;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray: #0f0f0f;
+  --color-gray-lighter: #262626;
+
+  // Duration
+  --duration-slow: #{$duration * 1.5}s;
+  --duration-normal: #{$duration}s;
+  --duration-fast: #{math.div($duration, 2)}s;
+
+  // Transitions
+  --transition-quick: var(--duration-fast) cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: var(--duration) cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+  line-height: 1.5;
+  box-sizing: border-box;
+  text-rendering: geometricprecision;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // tweak if site is light mode.
+  color-scheme: dark;
+  background-color: var(--color-black);
+}
+
+body {
+  background-color: var(--color-black);
+  font-family: var(--font-body);
+  transition: opacity var(--transition-quick);
+}
+
+body.inspect * {
+  outline: 1px solid var(--inspect-color) !important;
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+// used in use-prevents-scroll hook
+
+html.no-scroll {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
