@@ -1,33 +1,31 @@
 import type { UrlObject } from 'node:url'
-
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import * as React from 'react'
 
 import { canPrefetch as defaultCanPrefetch } from '~/lib/utils/can-prefetch'
 import { checkIsExternal } from '~/lib/utils/router'
 
+type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
+
 export type LinkProps = {
-  children: string | JSX.IntrinsicElements['a']['children']
+  children: React.ReactNode
   canPrefetch?: (href: string | UrlObject) => boolean
-} & Omit<JSX.IntrinsicElements['a'], 'children'> &
+} & Omit<AnchorProps, 'children'> &
   Omit<NextLinkProps, 'as' | 'passHref' | 'children'>
 
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   ({ children, className, ...restProps }, ref) => {
     const {
       href,
-      // NextLink Props
       canPrefetch = defaultCanPrefetch,
       replace,
       scroll = false,
       shallow,
       prefetch,
-      // Rest
       ...aProps
     } = restProps
 
     const isExternal = checkIsExternal(href)
-
     const canPrefetchHref = href && canPrefetch(href)
     const shouldPrefetch = prefetch && canPrefetchHref
 
@@ -58,4 +56,5 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   }
 )
 
+Link.displayName = 'Link'
 export default Link

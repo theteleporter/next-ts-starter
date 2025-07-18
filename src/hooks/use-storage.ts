@@ -17,7 +17,7 @@ export const useStorage = <Schema extends z.ZodTypeAny>(
   const schema = React.useMemo(() => getSchema(z), [getSchema])
   const isHydrated = useIsHydrated()
   const isDisabled = options?.enabled === false || !isHydrated
-  const prev = React.useRef<Value>()
+  const prev = React.useRef<undefined | Value>(undefined)
 
   const query = useQuery<Value>({
     queryKey: [key],
