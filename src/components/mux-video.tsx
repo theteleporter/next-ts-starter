@@ -4,7 +4,7 @@ import { mergeRefs } from 'react-merge-refs'
 
 export type MuxVideoProps = {
   muxSrc: string
-} & Omit<JSX.IntrinsicElements['video'], 'src'>
+} & Omit<React.VideoHTMLAttributes<HTMLVideoElement>, 'src'>
 
 export const MuxVideo = React.forwardRef<HTMLVideoElement, MuxVideoProps>(
   ({ muxSrc, className, ...rest }, ref) => {
@@ -17,17 +17,14 @@ export const MuxVideo = React.forwardRef<HTMLVideoElement, MuxVideoProps>(
         const video = videoRef.current
 
         if (video.canPlayType('application/vnd.apple.mpegurl')) {
-          // Some browers (safari and ie edge) support HLS natively
           video.src = muxSrc
           video.defaultMuted = true
         } else if (Hls.isSupported()) {
-          // This will run in all other modern browsers
           hls = new Hls()
           hls.attachMedia(video)
           hls.on(Events.MEDIA_ATTACHED, () => {
             hls?.loadSource(muxSrc)
             hls?.on(Events.MANIFEST_PARSED, (_event, data) => {
-              // Maximum quality available
               hls.nextLevel ??= data.levels.length - 1
             })
           })

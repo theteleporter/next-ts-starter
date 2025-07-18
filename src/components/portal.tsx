@@ -8,37 +8,36 @@ type Props = {
   className?: string
 }
 
-export const Portal = ({
+export const Portal: React.FC<Props> = ({
   children,
   id = 'basement-portal',
   onMount,
-  className
-}: Props) => {
-  const ref = React.useRef<HTMLElement>()
+  className,
+}) => {
+  const ref = React.useRef<HTMLElement | null>(null)
   const [isMounted, setIsMounted] = React.useState(false)
 
   React.useEffect(() => {
-    let portal: HTMLElement | undefined = undefined
-    const existingPortal = document.getElementById(id) as HTMLElement | null
-    if (existingPortal) {
-      portal = existingPortal
-    } else {
+    let portal = document.getElementById(id) as HTMLElement | null
+
+    if (!portal) {
       portal = document.createElement('div')
       portal.id = id
       document.body.appendChild(portal)
     }
+
     portal.className = className ?? ''
     ref.current = portal
     setIsMounted(true)
   }, [className, id])
 
   React.useEffect(() => {
-    if (isMounted && onMount) onMount()
+    if (isMounted && onMount) {
+      onMount()
+    }
   }, [isMounted, onMount])
 
-  return isMounted && ref.current ? (
-    (createPortal(<>{children}</>, ref.current) as JSX.Element)
-  ) : (
-    <></>
-  )
+  if (!isMounted || !ref.current) return null
+
+  return createPortal(children, ref.current)
 }
