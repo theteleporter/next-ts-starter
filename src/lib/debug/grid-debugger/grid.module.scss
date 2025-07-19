@@ -43,8 +43,7 @@ $fixed-width: 1280px;
 }
 
 .grid {
-  @include responsive-settings;
-
+  // 👇 Moved declarations BEFORE nested rules
   position: fixed;
   z-index: 9999;
   background-image: linear-gradient(
@@ -57,10 +56,7 @@ $fixed-width: 1280px;
   height: 100vh;
   inset: 0;
 
-  span {
-    opacity: 0.15;
-    background: var(--inspect-color);
-  }
+  @include responsive-settings;
 
   &--fluid {
     @include apply-grid('fluid');
@@ -68,5 +64,10 @@ $fixed-width: 1280px;
 
   &--fixed {
     @include apply-grid('fixed');
+  }
+
+  span {
+    opacity: 0.15;
+    background: var(--inspect-color);
   }
 }
