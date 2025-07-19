@@ -22,15 +22,8 @@ export const siteOrigin = siteURL.origin
 // as our signature.
 // you can delete it if not needed.
 export const basementLog = `
-
-   ██╗
-   ██║
-   ██████╗
-   ██╔══██╗  ██╗
-   ██████╔╝  ██╝
-   ╚═════╝   
                                                                                 
-   From the basement. https://basement.studio
+   From Telecorp. https://theteleporter.site
 `
 
 // TODO: add variable (NEXT_PUBLIC_GA_TRACKING_ID) to env if necessary
