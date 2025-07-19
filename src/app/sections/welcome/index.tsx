@@ -6,7 +6,7 @@ export const Welcome = () => {
       <div className={s.container}>
         <div className={s.box}>
           <p>
-            👋 Hi there. You are on the basement <code>next-typescript</code>{' '}
+            👋 Hi there. You are on The Teleporter <code>next-typescript</code>{' '}
             starter.
           </p>
         </div>
@@ -14,13 +14,13 @@ export const Welcome = () => {
         <h3>Links</h3>
         <div className={s.box}>
           <p>
-            📝 You can find some utils on our gists notion.&nbsp;
+            📝 You can find some of my gists on my site;
             <a
               target="_blank"
-              href="https://basementstudio.notion.site/09383099eb9d415b952af95d5e6a82cc?v=a5d4e739a25a4c3193d7f16e87bdf94e"
+              href="https://theteleporter.site/craft"
               rel="noreferrer"
             >
-              Check it out!
+              Check them out!
             </a>
           </p>
         </div>
@@ -45,14 +45,14 @@ export const Welcome = () => {
         <h3>Credits</h3>
         <div className={s.box}>
           <p>
-            From the{' '}
+            From {' '}
             <a
-              href="https://basement.studio"
+              href="https://theteleporter.site"
               target="_blank"
               rel="noopener"
               style={{ fontWeight: 'bold', textDecoration: 'none' }}
             >
-              basement.
+              The Teleporter.
             </a>
           </p>
         </div>
