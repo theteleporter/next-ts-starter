@@ -33,8 +33,6 @@ Repository for `your-project`'s website.
 
 ---
 
-   ```
-
 ## Important Things to Do
 
 - [ ] Check out `.env.example` for required environment variables to run the project.
