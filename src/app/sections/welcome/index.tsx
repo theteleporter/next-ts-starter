@@ -6,7 +6,7 @@ export const Welcome = () => {
       <div className={s.container}>
         <div className={s.box}>
           <p>
-            👋 Hi there. You are on The Teleporter <code>next-typescript</code>{' '}
+            👋 Hi there. You are on The Teleporter&#39;s <code>next-typescript</code>{' '}
             starter.
           </p>
         </div>
@@ -14,7 +14,7 @@ export const Welcome = () => {
         <h3>Links</h3>
         <div className={s.box}>
           <p>
-            📝 You can find some of my gists on my site;
+            📝 You can find some of my crafts and designs on my site.
             <a
               target="_blank"
               href="https://theteleporter.site/craft"
@@ -52,7 +52,7 @@ export const Welcome = () => {
               rel="noopener"
               style={{ fontWeight: 'bold', textDecoration: 'none' }}
             >
-              The Teleporter.
+              Telecorp.
             </a>
           </p>
         </div>
