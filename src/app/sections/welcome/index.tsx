@@ -14,7 +14,7 @@ export const Welcome = () => {
         <h3>Links</h3>
         <div className={s.box}>
           <p>
-            📝 You can find some of my crafts and designs on my site.
+            📝 You can find some of my crafts and designs on my site.&nbsp;
             <a
               target="_blank"
               href="https://theteleporter.site/craft"
