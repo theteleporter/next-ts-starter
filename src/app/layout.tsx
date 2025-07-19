@@ -3,9 +3,9 @@ import '~/css/global.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
+import GridDebuggerClient from '~/components/grid-debugger-client'
 import { Header } from '~/components/header'
 import { isDev, siteURL } from '~/lib/constants'
-import GridDebuggerClient from '~/components/grid-debugger-client'
 
 import { AppHooks } from './app-hooks'
 import { Providers } from './providers'

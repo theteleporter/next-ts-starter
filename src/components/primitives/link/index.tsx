@@ -1,4 +1,5 @@
 import type { UrlObject } from 'node:url'
+
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import * as React from 'react'
 
