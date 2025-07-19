@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --turbopack",
     "build:analyze": "cross-env ANALYZE=true yarn build",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "@tanstack/react-query": "^5.32.0",
+    "@tanstack/react-query": "^5.37.0",
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "hls.js": "^1.5.8",

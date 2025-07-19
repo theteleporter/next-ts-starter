@@ -10,7 +10,7 @@ export const AspectBox = React.forwardRef<
       style={{
         position: 'relative',
         width: '100%',
-        paddingBottom: `${100 / ratio}%`,
+        paddingBottom: `${100 / ratio}%`
       }}
     >
       <div
@@ -21,7 +21,7 @@ export const AspectBox = React.forwardRef<
           top: 0,
           right: 0,
           bottom: 0,
-          left: 0,
+          left: 0
         }}
       >
         {children}

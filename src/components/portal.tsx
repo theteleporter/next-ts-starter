@@ -12,7 +12,7 @@ export const Portal: React.FC<Props> = ({
   children,
   id = 'basement-portal',
   onMount,
-  className,
+  className
 }) => {
   const ref = React.useRef<HTMLElement | null>(null)
   const [isMounted, setIsMounted] = React.useState(false)

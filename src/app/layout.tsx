@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google'
 
 import { Header } from '~/components/header'
 import { isDev, siteURL } from '~/lib/constants'
-
 import GridDebuggerClient from '~/components/grid-debugger-client'
 
 import { AppHooks } from './app-hooks'

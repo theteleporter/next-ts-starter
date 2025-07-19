@@ -448,15 +448,20 @@ ul {
    * to 0 on all elements.
    *
    * https://github.com/tailwindcss/tailwindcss/issues/362
-   */
+   
 
 input:input-placeholder,
 textarea:input-placeholder {
   color: #a0aec0;
+} */
+
+input::placeholder,
+textarea::placeholder {
+  color: #a0aec0;
 }
 
-input::input-placeholder,
-textarea::input-placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #a0aec0;
 }
 
@@ -495,8 +500,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
+  font-family:
+    Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 /**
