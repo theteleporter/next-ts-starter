@@ -39,13 +39,11 @@ $fixed-width: 1280px;
     --margin: #{helpers.tovw(map.get($margin, 'mobile'), map.get($margin, 'mobile'))};
   }
 
-  // ✅ FIXED: wrap this in `& {}` to avoid Sass mixed-decls warning
-  & {
-    --width: #{calc($fixed-width - (2 * var(--margin)))};
-  }
+  --width: #{calc($fixed-width - (2 * var(--margin)))};
 }
 
 .grid {
+  // 👇 Move declarations BEFORE nested rules
   position: fixed;
   z-index: 9999;
   background-image: linear-gradient(
