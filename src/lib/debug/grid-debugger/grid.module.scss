@@ -1,4 +1,5 @@
-@import '~/css/helpers';
+@use '../../css/helpers' as helpers;
+@use 'sass:map';
 
 $columns: 12;
 $columns-mobile: 4;
@@ -29,16 +30,15 @@ $fixed-width: 1280px;
 
 @mixin responsive-settings {
   --columns: #{$columns};
-  --gap: #{tovw(map-get($gap, 'desktop'), map-get($gap, 'desktop'))};
-  --margin: #{tovw(map-get($margin, 'desktop'), map-get($margin, 'desktop'))};
+  --gap: #{tovw(map.get($gap, 'desktop'), map.get($gap, 'desktop'))};
+  --margin: #{tovw(map.get($margin, 'desktop'), map.get($margin, 'desktop'))};
+  --width: #{calc($fixed-width - (2 * var(--margin)))};
 
   @include respond-to('mobile') {
     --columns: #{$columns-mobile};
-    --gap: #{tovw(map-get($gap, 'mobile'), map-get($gap, 'mobile'))};
-    --margin: #{tovw(map-get($margin, 'mobile'), map-get($margin, 'mobile'))};
+    --gap: #{tovw(map.get($gap, 'mobile'), map.get($gap, 'mobile'))};
+    --margin: #{tovw(map.get($margin, 'mobile'), map.get($margin, 'mobile'))};
   }
-
-  --width: #{calc($fixed-width - (2 * var(--margin)))};
 }
 
 .grid {
