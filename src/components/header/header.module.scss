@@ -1,4 +1,4 @@
-@import '~/css/helpers';
+@use '../../css/helpers';
 
 .container {
   z-index: 50;
@@ -20,7 +20,7 @@
 
 .header {
   height: 4.5rem;
-  padding: 0 tovw(16px, 16px);
+  padding: 0 helpers.tovw(16px, 16px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -154,7 +154,7 @@
   }
 
   &Header {
-    height: tovw(48px, 59px, 'mobile');
+    height: helpers.tovw(48px, 59px, 'mobile');
     border-bottom: 1px solid var(--color-gray-lighter);
   }
 
@@ -181,7 +181,7 @@
 
 @media (width >= 1024px) {
   .header {
-    padding: 0 tovw(24px, 24px);
+    padding: 0 helpers.tovw(24px, 24px);
   }
 
   .logo {

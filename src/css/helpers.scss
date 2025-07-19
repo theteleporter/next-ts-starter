@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:meta";
 @use 'sass:string';
 @use 'sass:math';
 
@@ -14,12 +16,12 @@ $breakpoints: (
 );
 
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media #{meta.inspect(map.get($breakpoints, $breakpoint))} {
       @content;
     }
   } @else {
-    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Available breakpoints are: #{map.keys($breakpoints)}.';
   }
 }
 

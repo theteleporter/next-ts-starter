@@ -1,7 +1,7 @@
 /* stylelint-disable scss/operator-no-newline-after */
 @use 'sass:map';
 @use 'sass:math';
-@import './helpers';
+@use 'helpers';
 @import './reset.css';
 
 :root {
@@ -18,9 +18,9 @@
   --color-gray-lighter: #262626;
 
   // Duration
-  --duration-slow: #{$duration * 1.5}s;
-  --duration-normal: #{$duration}s;
-  --duration-fast: #{math.div($duration, 2)}s;
+  --duration-slow: #{helpers.$duration * 1.5}s;
+  --duration-normal: #{helpers.$duration}s;
+  --duration-fast: #{math.div(helpers.$duration, 2)}s;
 
   // Transitions
   --transition-quick: var(--duration-fast) cubic-bezier(0.25, 1, 0.5, 1);

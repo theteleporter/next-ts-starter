@@ -45,7 +45,7 @@ export const Welcome = () => {
         <h3>Credits</h3>
         <div className={s.box}>
           <p>
-            From {' '}
+            From{' '}
             <a
               href="https://theteleporter.site"
               target="_blank"
