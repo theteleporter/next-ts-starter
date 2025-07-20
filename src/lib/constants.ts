@@ -22,7 +22,16 @@ export const siteOrigin = siteURL.origin
 // as our signature.
 // you can delete it if not needed.
 export const basementLog = `
-                                                                                
+                              
+
+   ███████╗
+      ██╔══╝
+      ██║   
+      ██║   
+      ██║   
+      ╚═╝   
+
+                                                  
    From Telecorp. https://theteleporter.site
 `
 
